@@ -9,20 +9,20 @@ class Dagger < Formula
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "http://dagger-io.s3-website-us-east-1.amazonaws.com/dagger/releases/0.1.0-alpha.1/dagger_v0.1.0-alpha.1_darwin_amd64.tar.gz"
-    sha256 "73b2751d98f50dfc932b7d68b5752fed80076a0b108a49ec7ce491dd5c4479e1"
+    url "https://dagger-io.s3.amazonaws.com/dagger/releases/0.1.0-alpha.1/dagger_v0.1.0-alpha.1_darwin_amd64.tar.gz"
+    sha256 "0aa36fc897d0cd2a6ace9902c933b7287444dd6cddefebfc76696772b0d908e1"
   end
   if OS.mac? && Hardware::CPU.arm?
-    url "http://dagger-io.s3-website-us-east-1.amazonaws.com/dagger/releases/0.1.0-alpha.1/dagger_v0.1.0-alpha.1_darwin_arm64.tar.gz"
-    sha256 "ecbd379d7d330b350f554c8a2d6ca950891dd9e93796440c7974c771e1ca77b0"
+    url "https://dagger-io.s3.amazonaws.com/dagger/releases/0.1.0-alpha.1/dagger_v0.1.0-alpha.1_darwin_arm64.tar.gz"
+    sha256 "447a86e0b3d2f4a10f3aa9ab3b78ffef6c79e61a4715b7df21b54cce5e0219dc"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "http://dagger-io.s3-website-us-east-1.amazonaws.com/dagger/releases/0.1.0-alpha.1/dagger_v0.1.0-alpha.1_linux_amd64.tar.gz"
-    sha256 "d760b138a573a827e62c5d42f2d0c4a613a5bc839706064b84d7ee7e87e59f12"
+    url "https://dagger-io.s3.amazonaws.com/dagger/releases/0.1.0-alpha.1/dagger_v0.1.0-alpha.1_linux_amd64.tar.gz"
+    sha256 "46e13db3954d6e81e5dbede8ae787240740379d432097fff45368a39fc5c43bf"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "http://dagger-io.s3-website-us-east-1.amazonaws.com/dagger/releases/0.1.0-alpha.1/dagger_v0.1.0-alpha.1_linux_arm64.tar.gz"
-    sha256 "3183abae45d1c8b9870f1506361d41fce9eee32c05426674acda33f7e3e99932"
+    url "https://dagger-io.s3.amazonaws.com/dagger/releases/0.1.0-alpha.1/dagger_v0.1.0-alpha.1_linux_arm64.tar.gz"
+    sha256 "fb9a1a2b9a985fde70b7accda018340a238a2bc7cadd48cd771c22a41a0d267e"
   end
 
   def install
