@@ -10,19 +10,19 @@ class Dagger < Formula
 
   if OS.mac? && Hardware::CPU.intel?
     url "https://dagger-io.s3.amazonaws.com/dagger/releases/0.1.0-alpha.2/dagger_v0.1.0-alpha.2_darwin_amd64.tar.gz"
-    sha256 "3586328de7642edc4aa63d68af0b68f076a1945ebecaf38409d4d204dd76a8b1"
+    sha256 "a8f611ea2e55208ea1fb60ba8573d0f690cca7cc3d53803d496540da657a736a"
   end
   if OS.mac? && Hardware::CPU.arm?
     url "https://dagger-io.s3.amazonaws.com/dagger/releases/0.1.0-alpha.2/dagger_v0.1.0-alpha.2_darwin_arm64.tar.gz"
-    sha256 "ba77e941cef259b75ab288eb8f32412b78fa259efb237613ad5803ba6ea9eefa"
+    sha256 "4d7dc421b9513fd5ffed78a6c48ca6a05680120da3069c4bd504210da3d8ca22"
   end
   if OS.linux? && Hardware::CPU.intel?
     url "https://dagger-io.s3.amazonaws.com/dagger/releases/0.1.0-alpha.2/dagger_v0.1.0-alpha.2_linux_amd64.tar.gz"
-    sha256 "44abe31ca3ea3b649618f5310dbe99ede302777b5c63aba78e3b4ab49f48a1df"
+    sha256 "99c2799336352d4807d8de1870d35bebfd5316781d1a3b1e6b710e698d7937b0"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
     url "https://dagger-io.s3.amazonaws.com/dagger/releases/0.1.0-alpha.2/dagger_v0.1.0-alpha.2_linux_arm64.tar.gz"
-    sha256 "fb8d0d2d7261101230d9358ac29e98aa5e80f174832c9eb9652e16999124e70b"
+    sha256 "65760aa7422c7c90d4ba142ec25e36f1924bba5ae21a50bc0a5edc2bba2b60b2"
   end
 
   def install
