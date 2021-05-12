@@ -5,24 +5,24 @@
 class Dagger < Formula
   desc "Dagger is a programmable deployment system."
   homepage "https://github.com/dagger/dagger"
-  version "0.1.0-alpha.3"
+  version "0.1.0-alpha.4"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://dagger-io.s3.amazonaws.com/dagger/releases/0.1.0-alpha.3/dagger_v0.1.0-alpha.3_darwin_amd64.tar.gz"
-    sha256 "d29f15975eb7949e8396288a13bd563f43c760aadf9fefee043ae4b805464078"
+    url "https://dagger-io.s3.amazonaws.com/dagger/releases/0.1.0-alpha.4/dagger_v0.1.0-alpha.4_darwin_amd64.tar.gz"
+    sha256 "b734ffbfb769e1ed4464d7faf8203f66e0077980faf08b5d35cfce60e6a558cc"
   end
   if OS.mac? && Hardware::CPU.arm?
-    url "https://dagger-io.s3.amazonaws.com/dagger/releases/0.1.0-alpha.3/dagger_v0.1.0-alpha.3_darwin_arm64.tar.gz"
-    sha256 "f12981d52aba58310687a82a4342379650aedbb8e996a5ac1297ef77a24e9af1"
+    url "https://dagger-io.s3.amazonaws.com/dagger/releases/0.1.0-alpha.4/dagger_v0.1.0-alpha.4_darwin_arm64.tar.gz"
+    sha256 "a90a2104f5b73dabfe0f72a16d85bc2aa6a7f7689c6751f1cd34a1c33e3d2d0c"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://dagger-io.s3.amazonaws.com/dagger/releases/0.1.0-alpha.3/dagger_v0.1.0-alpha.3_linux_amd64.tar.gz"
-    sha256 "31e141920ee6b15bc75b1d5e23d008cd391a6078294c4238f421d8372f51c8df"
+    url "https://dagger-io.s3.amazonaws.com/dagger/releases/0.1.0-alpha.4/dagger_v0.1.0-alpha.4_linux_amd64.tar.gz"
+    sha256 "73fd03334b155923ebcca43b9cc43476a1338cb83193069f06c86e5545e1e31d"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://dagger-io.s3.amazonaws.com/dagger/releases/0.1.0-alpha.3/dagger_v0.1.0-alpha.3_linux_arm64.tar.gz"
-    sha256 "aa0030e06d5121dbcdbc81a6c6d4c9f56bf36e9df6afde56767f3212e86e3f8f"
+    url "https://dagger-io.s3.amazonaws.com/dagger/releases/0.1.0-alpha.4/dagger_v0.1.0-alpha.4_linux_arm64.tar.gz"
+    sha256 "fc2157f3d5bb703d0f8ba2013da1e2167f51ad3a1695ab59559eb037210ecdcc"
   end
 
   def install
