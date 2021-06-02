@@ -5,24 +5,29 @@
 class Dagger < Formula
   desc "Dagger is a programmable deployment system."
   homepage "https://github.com/dagger/dagger"
-  version "0.1.0-alpha.9"
+  version "0.1.0-alpha.10"
   bottle :unneeded
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://dagger-io.s3.amazonaws.com/dagger/releases/0.1.0-alpha.9/dagger_v0.1.0-alpha.9_darwin_amd64.tar.gz"
-    sha256 "a28427b83247e31bb84288a41d275f4b62afc3382ca15074807eac8d12e35b81"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://dagger-io.s3.amazonaws.com/dagger/releases/0.1.0-alpha.10/dagger_v0.1.0-alpha.10_darwin_amd64.tar.gz"
+      sha256 "c24141fa964613241064598a0fea419f9bdc452fb52e635dc4f13a62e081b560"
+    end
+    if Hardware::CPU.arm?
+      url "https://dagger-io.s3.amazonaws.com/dagger/releases/0.1.0-alpha.10/dagger_v0.1.0-alpha.10_darwin_arm64.tar.gz"
+      sha256 "4f40d9d1166c967ff77bce9a082299f5d9060abe849c604a0cef9dd1977c6ab3"
+    end
   end
-  if OS.mac? && Hardware::CPU.arm?
-    url "https://dagger-io.s3.amazonaws.com/dagger/releases/0.1.0-alpha.9/dagger_v0.1.0-alpha.9_darwin_arm64.tar.gz"
-    sha256 "38c84671cdaff6ae45518c6421df2952db1a7700eb65f13228ecd08b925861cb"
-  end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://dagger-io.s3.amazonaws.com/dagger/releases/0.1.0-alpha.9/dagger_v0.1.0-alpha.9_linux_amd64.tar.gz"
-    sha256 "4dba19917179dd164740eef8864b8c56a37e3f03728541f038d8a8a6572565c8"
-  end
-  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://dagger-io.s3.amazonaws.com/dagger/releases/0.1.0-alpha.9/dagger_v0.1.0-alpha.9_linux_arm64.tar.gz"
-    sha256 "3d1094275a7d91257041d6f2ec9e29e35fc56f3a84c824579bde184017e2f4f7"
+
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://dagger-io.s3.amazonaws.com/dagger/releases/0.1.0-alpha.10/dagger_v0.1.0-alpha.10_linux_amd64.tar.gz"
+      sha256 "143ea919409939f39b023402c253bc791fc894cecb6310882a7c4f9698c0c263"
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://dagger-io.s3.amazonaws.com/dagger/releases/0.1.0-alpha.10/dagger_v0.1.0-alpha.10_linux_arm64.tar.gz"
+      sha256 "f374df545147a97e1cfeedaa063a4b067d7112c629ac65bdf9cbeda24fe8744e"
+    end
   end
 
   def install
