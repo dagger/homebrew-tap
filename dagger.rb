@@ -5,28 +5,28 @@
 class Dagger < Formula
   desc "Dagger is a programmable deployment system."
   homepage "https://github.com/dagger/dagger"
-  version "0.1.0-alpha.17"
+  version "0.1.0-alpha.18"
   bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://dagger-io.s3.amazonaws.com/dagger/releases/0.1.0-alpha.17/dagger_v0.1.0-alpha.17_darwin_amd64.tar.gz"
-      sha256 "3b886fd0c1e3b6fd6e861a7901c9b8212f27f0ced52e39ee9097b71291ed594b"
+      url "https://dagger-io.s3.amazonaws.com/dagger/releases/0.1.0-alpha.18/dagger_v0.1.0-alpha.18_darwin_amd64.tar.gz"
+      sha256 "86c792c477490e844885770da115650e8f9cafac4301fe4afad8564e0a2b854b"
     end
     if Hardware::CPU.arm?
-      url "https://dagger-io.s3.amazonaws.com/dagger/releases/0.1.0-alpha.17/dagger_v0.1.0-alpha.17_darwin_arm64.tar.gz"
-      sha256 "6d39c883129a143242757bb45b995e774eba06b47c5dbffacb0ae89be64127c6"
+      url "https://dagger-io.s3.amazonaws.com/dagger/releases/0.1.0-alpha.18/dagger_v0.1.0-alpha.18_darwin_arm64.tar.gz"
+      sha256 "50fe8c766059ebc21a9543be3e07861dfde751cd34512e3ab243a532df3d8194"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://dagger-io.s3.amazonaws.com/dagger/releases/0.1.0-alpha.17/dagger_v0.1.0-alpha.17_linux_amd64.tar.gz"
-      sha256 "bba28fb9e2b4fe50f97d8dcab57c873ae74a7f369e6dad5c11735d6746a96e92"
+      url "https://dagger-io.s3.amazonaws.com/dagger/releases/0.1.0-alpha.18/dagger_v0.1.0-alpha.18_linux_amd64.tar.gz"
+      sha256 "575bf12ec8c77540c5ddfefd0835dbb663cd673df6213b3ab5c5cedd5db83454"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://dagger-io.s3.amazonaws.com/dagger/releases/0.1.0-alpha.17/dagger_v0.1.0-alpha.17_linux_arm64.tar.gz"
-      sha256 "4a6dee0f8087aa8be3a3ffa3535cece98b79184b13ee012f7fe6731a5029b80e"
+      url "https://dagger-io.s3.amazonaws.com/dagger/releases/0.1.0-alpha.18/dagger_v0.1.0-alpha.18_linux_arm64.tar.gz"
+      sha256 "e4499da32a93a5862c7ed3aa79192b7ba1e0d2c36f52cd922e8987a936e53d96"
     end
   end
 
