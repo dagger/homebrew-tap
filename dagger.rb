@@ -5,28 +5,28 @@
 class Dagger < Formula
   desc "Dagger is a programmable deployment system."
   homepage "https://github.com/dagger/dagger"
-  version "0.1.0-alpha.19"
+  version "0.1.0-alpha.20"
   bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://dl.dagger.io/dagger/releases/0.1.0-alpha.19/dagger_v0.1.0-alpha.19_darwin_amd64.tar.gz"
-      sha256 "80294104add4ebca73a47aba291ed30be21c17aa00312f9272c6b01a7e939a1f"
+      url "https://dl.dagger.io/dagger/releases/0.1.0-alpha.20/dagger_v0.1.0-alpha.20_darwin_amd64.tar.gz"
+      sha256 "3fedacceb4fc60040ab5fde5ba98d5906ed306c43678ea9a68151b83ed5f1d85"
     end
     if Hardware::CPU.arm?
-      url "https://dl.dagger.io/dagger/releases/0.1.0-alpha.19/dagger_v0.1.0-alpha.19_darwin_arm64.tar.gz"
-      sha256 "34177226d373f0bb139ec1ba279c0d95dad441880d0255f3bccc697022cc39c8"
+      url "https://dl.dagger.io/dagger/releases/0.1.0-alpha.20/dagger_v0.1.0-alpha.20_darwin_arm64.tar.gz"
+      sha256 "7afeffd1d9627b0f91d3001574fa34b60509f8e5c4f593d6ce77eac9e05bf2c3"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://dl.dagger.io/dagger/releases/0.1.0-alpha.19/dagger_v0.1.0-alpha.19_linux_amd64.tar.gz"
-      sha256 "26b900181d87ef6c26fdb8c65aec84b5c16957754bc5f1d66a342492adf5be9f"
+      url "https://dl.dagger.io/dagger/releases/0.1.0-alpha.20/dagger_v0.1.0-alpha.20_linux_amd64.tar.gz"
+      sha256 "a98a6414ea06d478f3ce698be4bad4a653a586903b753d6b35a3a4702466b141"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://dl.dagger.io/dagger/releases/0.1.0-alpha.19/dagger_v0.1.0-alpha.19_linux_arm64.tar.gz"
-      sha256 "aadb9ad09d1901608683c6788eab8612aa74415bd790c6b663a084af1ab218ab"
+      url "https://dl.dagger.io/dagger/releases/0.1.0-alpha.20/dagger_v0.1.0-alpha.20_linux_arm64.tar.gz"
+      sha256 "c7414cabeb4b5f8e3f1bf52d8c5837ded743b4c38c02259918ab6a1342166d6c"
     end
   end
 
