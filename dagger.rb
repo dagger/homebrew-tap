@@ -6,7 +6,6 @@ class Dagger < Formula
   desc "Dagger is a programmable deployment system."
   homepage "https://github.com/dagger/dagger"
   version "0.1.0-alpha.27"
-  bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
