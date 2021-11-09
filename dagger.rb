@@ -5,33 +5,44 @@
 class Dagger < Formula
   desc "Dagger is a programmable deployment system."
   homepage "https://github.com/dagger/dagger"
-  version "0.1.0-alpha.27"
-  bottle :unneeded
+  version "0.1.0-alpha.28"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://dl.dagger.io/dagger/releases/0.1.0-alpha.27/dagger_v0.1.0-alpha.27_darwin_amd64.tar.gz"
-      sha256 "185f74ffcbcb80e5672ed5054173736fce22018e5f63aaa18cd668ec700b0962"
-    end
     if Hardware::CPU.arm?
-      url "https://dl.dagger.io/dagger/releases/0.1.0-alpha.27/dagger_v0.1.0-alpha.27_darwin_arm64.tar.gz"
-      sha256 "fbf8121d5373dd5fef26a23e527387476668031fc7f52deebc22494f1e377b76"
+      url "https://dl.dagger.io/dagger/releases/0.1.0-alpha.28/dagger_v0.1.0-alpha.28_darwin_arm64.tar.gz"
+      sha256 "8ff7fb0111dbecf16046ba9bf965638580fd32f0418502e7085bdfe71552e083"
+
+      def install
+        bin.install "dagger"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://dl.dagger.io/dagger/releases/0.1.0-alpha.28/dagger_v0.1.0-alpha.28_darwin_amd64.tar.gz"
+      sha256 "d6bafc963a19fd14748a7de01b9e71046e766e9ab99e484dc3323595e46ca5b0"
+
+      def install
+        bin.install "dagger"
+      end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://dl.dagger.io/dagger/releases/0.1.0-alpha.27/dagger_v0.1.0-alpha.27_linux_amd64.tar.gz"
-      sha256 "771432129c8422298e18be88e611c4b41f8e7ea803f559f3067dcecb6f118abe"
+      url "https://dl.dagger.io/dagger/releases/0.1.0-alpha.28/dagger_v0.1.0-alpha.28_linux_amd64.tar.gz"
+      sha256 "711ba57ffa28ad551ef9e6edbd783317f9e2dbada6bde3b00591c4633fc02b4c"
+
+      def install
+        bin.install "dagger"
+      end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://dl.dagger.io/dagger/releases/0.1.0-alpha.27/dagger_v0.1.0-alpha.27_linux_arm64.tar.gz"
-      sha256 "21163d50634b3b17f1c9e9c269c090aa924693919d1bdeec7bd503e2f5d38c1a"
-    end
-  end
+      url "https://dl.dagger.io/dagger/releases/0.1.0-alpha.28/dagger_v0.1.0-alpha.28_linux_arm64.tar.gz"
+      sha256 "dfbcf1c1f323e0435af7e60bb8ec83db8ba28416529d372cb1ce30d8d2bdf251"
 
-  def install
-    bin.install "dagger"
+      def install
+        bin.install "dagger"
+      end
+    end
   end
 
   test do
