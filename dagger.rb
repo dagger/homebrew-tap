@@ -5,20 +5,20 @@
 class Dagger < Formula
   desc "Dagger is a programmable deployment system."
   homepage "https://github.com/dagger/dagger"
-  version "0.1.0-alpha.30"
+  version "0.1.0-alpha.31"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://dl.dagger.io/dagger/releases/0.1.0-alpha.30/dagger_v0.1.0-alpha.30_darwin_arm64.tar.gz"
-      sha256 "a0c9861eb873f86dc6ed8e0fb1b6a8099fa1bb9db0d7122e658fee2ba8660a4a"
+      url "https://dl.dagger.io/dagger/releases/0.1.0-alpha.31/dagger_v0.1.0-alpha.31_darwin_arm64.tar.gz"
+      sha256 "e0be6cfba9bdb01c709ab367818aa45bc1bf7ae7a7442f1142290ee0bc580436"
 
       def install
         bin.install "dagger"
       end
     end
     if Hardware::CPU.intel?
-      url "https://dl.dagger.io/dagger/releases/0.1.0-alpha.30/dagger_v0.1.0-alpha.30_darwin_amd64.tar.gz"
-      sha256 "730bd665b8e1eb10e4f3a1c6b5bdb32f7a2d10db4cf65a897140821fc5b478cc"
+      url "https://dl.dagger.io/dagger/releases/0.1.0-alpha.31/dagger_v0.1.0-alpha.31_darwin_amd64.tar.gz"
+      sha256 "c434cbb92433cda3e41a4bee71e8b6db3a96d093bdc55f8e03934898c2098bdf"
 
       def install
         bin.install "dagger"
@@ -28,16 +28,16 @@ class Dagger < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://dl.dagger.io/dagger/releases/0.1.0-alpha.30/dagger_v0.1.0-alpha.30_linux_amd64.tar.gz"
-      sha256 "939285853cd96f80322aea348d033ccf32ca4031d2a2693af54a9b8c14029434"
+      url "https://dl.dagger.io/dagger/releases/0.1.0-alpha.31/dagger_v0.1.0-alpha.31_linux_amd64.tar.gz"
+      sha256 "8f26dc602c9e8691ce8cc5a48bcb02b4f1692c07aa079d64b83ff2d8d56f82cd"
 
       def install
         bin.install "dagger"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://dl.dagger.io/dagger/releases/0.1.0-alpha.30/dagger_v0.1.0-alpha.30_linux_arm64.tar.gz"
-      sha256 "61659918b790d6e68ecd7660ea0a53cea01ca079d01d6c065ecbbb005a4086ba"
+      url "https://dl.dagger.io/dagger/releases/0.1.0-alpha.31/dagger_v0.1.0-alpha.31_linux_arm64.tar.gz"
+      sha256 "d906e9932bc5ce7e1376c0fc9bd45a68bf756195300ade979cdf1cb3c2f811b3"
 
       def install
         bin.install "dagger"
