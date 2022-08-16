@@ -5,20 +5,20 @@
 class Dagger < Formula
   desc "Dagger is a programmable deployment system."
   homepage "https://github.com/dagger/dagger"
-  version "0.2.29"
+  version "0.2.30"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://dl.dagger.io/dagger/releases/0.2.29/dagger_v0.2.29_darwin_amd64.tar.gz"
-      sha256 "a9410c1915eed39ced63ee1763bdfc00824fdede61510eef61c63b1c02c549e7"
+    if Hardware::CPU.arm?
+      url "https://dl.dagger.io/dagger/releases/0.2.30/dagger_v0.2.30_darwin_arm64.tar.gz"
+      sha256 "cb5af39f60d16b216cce044e572c40c2fc561cb421365b85c7acf03e1d015161"
 
       def install
         bin.install "dagger"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://dl.dagger.io/dagger/releases/0.2.29/dagger_v0.2.29_darwin_arm64.tar.gz"
-      sha256 "db2a0d3fc5ea653fe84430b528e3dd04638cb3853b42525c49657e104cd26250"
+    if Hardware::CPU.intel?
+      url "https://dl.dagger.io/dagger/releases/0.2.30/dagger_v0.2.30_darwin_amd64.tar.gz"
+      sha256 "ed9beb27bc6f15c745df5a65ca7dd807df770eccccdfcb9031a715b63ec3cdce"
 
       def install
         bin.install "dagger"
@@ -28,16 +28,16 @@ class Dagger < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://dl.dagger.io/dagger/releases/0.2.29/dagger_v0.2.29_linux_arm64.tar.gz"
-      sha256 "9f5ed29b0fa2aec4a7f644680f2a13808921d33fe7e3726d93dd1d2daff5e5d2"
+      url "https://dl.dagger.io/dagger/releases/0.2.30/dagger_v0.2.30_linux_arm64.tar.gz"
+      sha256 "ae5f868ce06e6385c25dd652157d77637b3b0d9b303d166ff7bccc54ba7482e6"
 
       def install
         bin.install "dagger"
       end
     end
     if Hardware::CPU.intel?
-      url "https://dl.dagger.io/dagger/releases/0.2.29/dagger_v0.2.29_linux_amd64.tar.gz"
-      sha256 "434fb92a728d5bf18de5ee9fad403eafbdeb44b34b09c5c8e5340f4b922a796d"
+      url "https://dl.dagger.io/dagger/releases/0.2.30/dagger_v0.2.30_linux_amd64.tar.gz"
+      sha256 "129fc1ad8e7861165057fa524689f73ac2df94dc375fbc6eede08a1eb219b768"
 
       def install
         bin.install "dagger"
