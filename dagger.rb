@@ -5,20 +5,20 @@
 class Dagger < Formula
   desc "Dagger is a programmable deployment system."
   homepage "https://github.com/dagger/dagger"
-  version "0.2.35"
+  version "0.2.36"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://dl.dagger.io/dagger/releases/0.2.35/dagger_v0.2.35_darwin_arm64.tar.gz"
-      sha256 "9a58ca6f02bdfea27512d35e8b4fc3bc1ddafb38b31b05574b0018f316492b8f"
+    if Hardware::CPU.intel?
+      url "https://dl.dagger.io/dagger/releases/0.2.36/dagger_v0.2.36_darwin_amd64.tar.gz"
+      sha256 "85a61b8b6459771cb99ea5e66ce8b5a785d2609ddd051f81b1e9046a6b3df62c"
 
       def install
         bin.install "dagger"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://dl.dagger.io/dagger/releases/0.2.35/dagger_v0.2.35_darwin_amd64.tar.gz"
-      sha256 "9eec3c963ac324266c6f7950eaf350a9bc9a101c14f627a2f5152e0b18a69be6"
+    if Hardware::CPU.arm?
+      url "https://dl.dagger.io/dagger/releases/0.2.36/dagger_v0.2.36_darwin_arm64.tar.gz"
+      sha256 "a8fa38cda29632b179bf7bf8bf8365f40934477c21484fc737711f68564efea1"
 
       def install
         bin.install "dagger"
@@ -27,17 +27,17 @@ class Dagger < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://dl.dagger.io/dagger/releases/0.2.35/dagger_v0.2.35_linux_amd64.tar.gz"
-      sha256 "d28ee63442999a0742a490fd02731b054f2f1330768ddc79fdd54a156ed9a5d6"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://dl.dagger.io/dagger/releases/0.2.36/dagger_v0.2.36_linux_arm64.tar.gz"
+      sha256 "ee054239e0aebea0b9e2b482600bb65aa9979c38210d359a5342ae84d772f8c2"
 
       def install
         bin.install "dagger"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://dl.dagger.io/dagger/releases/0.2.35/dagger_v0.2.35_linux_arm64.tar.gz"
-      sha256 "3d8e45d8018cadab7cc6eded3d45daf64c07c2b371a7ddc7d4dcb4c269cd3cee"
+    if Hardware::CPU.intel?
+      url "https://dl.dagger.io/dagger/releases/0.2.36/dagger_v0.2.36_linux_amd64.tar.gz"
+      sha256 "81075f303a780ad29221c0bbc6f45828b382437424430d61dc27e541743776f0"
 
       def install
         bin.install "dagger"
