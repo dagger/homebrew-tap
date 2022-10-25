@@ -5,20 +5,20 @@
 class DaggerCue < Formula
   desc "Dagger is a programmable deployment system."
   homepage "https://github.com/dagger/dagger"
-  version "0.1.0"
+  version "0.2.232"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://dl.dagger.io/dagger-cue/releases/0.1.0/dagger-cue_v0.1.0_darwin_amd64.tar.gz"
-      sha256 "f12758c1301d6eecea94bf21907749bf5528f24269dd3bb093774e687a855767"
+    if Hardware::CPU.arm?
+      url "https://dl.dagger.io/dagger-cue/releases/0.2.232/dagger-cue_v0.2.232_darwin_arm64.tar.gz"
+      sha256 "3e5a590367bebf62ec179cd118b093a03dc9430f6b2a0543287fa8e3c81e4f7d"
 
       def install
         bin.install "dagger-cue"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://dl.dagger.io/dagger-cue/releases/0.1.0/dagger-cue_v0.1.0_darwin_arm64.tar.gz"
-      sha256 "9879a18a2c02420c405180e8770f7a53ce12c1e13b5f279f6d4ae82c9a120442"
+    if Hardware::CPU.intel?
+      url "https://dl.dagger.io/dagger-cue/releases/0.2.232/dagger-cue_v0.2.232_darwin_amd64.tar.gz"
+      sha256 "ac3992e6013135973148e3748bc90f28ade1f9fcdce19e36d2fdbc927367c979"
 
       def install
         bin.install "dagger-cue"
@@ -28,16 +28,16 @@ class DaggerCue < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://dl.dagger.io/dagger-cue/releases/0.1.0/dagger-cue_v0.1.0_linux_amd64.tar.gz"
-      sha256 "27fb430d389a5d8ff92417cf6e78a3dcad85bbd5e67c8f3465ba1798696fe5eb"
+      url "https://dl.dagger.io/dagger-cue/releases/0.2.232/dagger-cue_v0.2.232_linux_amd64.tar.gz"
+      sha256 "3f54e82c88eb2804a55d3052f04aea3163d72c29c1a8b703d325b2637fde31e4"
 
       def install
         bin.install "dagger-cue"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://dl.dagger.io/dagger-cue/releases/0.1.0/dagger-cue_v0.1.0_linux_arm64.tar.gz"
-      sha256 "2e24bd49982c5d088ac6c5ead994e859cdfee52a7f2dabd6e096ac68d6c2dc37"
+      url "https://dl.dagger.io/dagger-cue/releases/0.2.232/dagger-cue_v0.2.232_linux_arm64.tar.gz"
+      sha256 "3e9edc17a2c062ae83394bae4d55328df558a90a20751b122a89b4e8ef8ad27b"
 
       def install
         bin.install "dagger-cue"
