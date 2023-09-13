@@ -5,20 +5,20 @@
 class Dagger < Formula
   desc "Dagger is a programmable deployment system."
   homepage "https://github.com/dagger/dagger"
-  version "0.8.4"
+  version "0.8.5"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://dl.dagger.io/dagger/releases/0.8.4/dagger_v0.8.4_darwin_amd64.tar.gz"
-      sha256 "8135868e96c627984eca8f4fe984759f844226c1b11510e47f7f0987c237d012"
+    if Hardware::CPU.arm?
+      url "https://dl.dagger.io/dagger/releases/0.8.5/dagger_v0.8.5_darwin_arm64.tar.gz"
+      sha256 "a1020e2509d28b556f284c3dfb3c93c3e352602bb573691b49f8f4b53d053c73"
 
       def install
         bin.install "dagger"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://dl.dagger.io/dagger/releases/0.8.4/dagger_v0.8.4_darwin_arm64.tar.gz"
-      sha256 "2e4f0275da9961a61bff62b955afdbaf822cf3c6b4fbb383e3c7235f95dc277c"
+    if Hardware::CPU.intel?
+      url "https://dl.dagger.io/dagger/releases/0.8.5/dagger_v0.8.5_darwin_amd64.tar.gz"
+      sha256 "887fb2940fdbf2dcf8597d5389c99e84a64f52feb3a771b03172d97dcec237d2"
 
       def install
         bin.install "dagger"
@@ -28,16 +28,16 @@ class Dagger < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://dl.dagger.io/dagger/releases/0.8.4/dagger_v0.8.4_linux_amd64.tar.gz"
-      sha256 "d65a20eb50b28caf9eb8000fbc326e895f4629823acde4b3f1f4999ac1caa4b8"
+      url "https://dl.dagger.io/dagger/releases/0.8.5/dagger_v0.8.5_linux_amd64.tar.gz"
+      sha256 "f58c7ff2b727d6c475cf260b5467a83d8c51e219fd634b805f7526dcb33cf73d"
 
       def install
         bin.install "dagger"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://dl.dagger.io/dagger/releases/0.8.4/dagger_v0.8.4_linux_arm64.tar.gz"
-      sha256 "7bef83e4437b8dabb08b0ccdcd11d7d784d698398c5cc10a8d3231b1efe03704"
+      url "https://dl.dagger.io/dagger/releases/0.8.5/dagger_v0.8.5_linux_arm64.tar.gz"
+      sha256 "b142e81d64217f929b3c2076cf0ad10a20f1ac1be59c463eb03f6ead51fc7b95"
 
       def install
         bin.install "dagger"
