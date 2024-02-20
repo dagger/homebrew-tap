@@ -5,20 +5,20 @@
 class Dagger < Formula
   desc "Dagger is an integrated platform to orchestrate the delivery of applications"
   homepage "https://dagger.io"
-  version "0.9.10"
+  version "0.9.11"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://dl.dagger.io/dagger/releases/0.9.10/dagger_v0.9.10_darwin_arm64.tar.gz"
-      sha256 "cc2b7e08339eca7302fd52037abf08d1575dd5fa149812b6dd131b9ad1b8a7c1"
+      url "https://dl.dagger.io/dagger/releases/0.9.11/dagger_v0.9.11_darwin_arm64.tar.gz"
+      sha256 "79c3dec16cf7d17c44d9c82b0131cdfc0e11e3526859e9296d37ab333314e4c8"
 
       def install
         bin.install "dagger"
       end
     end
     if Hardware::CPU.intel?
-      url "https://dl.dagger.io/dagger/releases/0.9.10/dagger_v0.9.10_darwin_amd64.tar.gz"
-      sha256 "ddcc3a119b39e48dac893b6e448dcd4721ed4425101b3a2508a8c20b3d587810"
+      url "https://dl.dagger.io/dagger/releases/0.9.11/dagger_v0.9.11_darwin_amd64.tar.gz"
+      sha256 "81ce8bb07fcbf6346783e11c482f6d57aa0a47b3435151eb61e623d2bb58a93d"
 
       def install
         bin.install "dagger"
@@ -28,16 +28,16 @@ class Dagger < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://dl.dagger.io/dagger/releases/0.9.10/dagger_v0.9.10_linux_arm64.tar.gz"
-      sha256 "ffaedc9c895fa1ca3f8559e2496333f3561763b03425f39dad162260df1f8b7d"
+      url "https://dl.dagger.io/dagger/releases/0.9.11/dagger_v0.9.11_linux_arm64.tar.gz"
+      sha256 "62379889f6ec70e9f3bb9b0c52f47ee2eee3278e6b79ffdf23fcba0e9552e0e0"
 
       def install
         bin.install "dagger"
       end
     end
     if Hardware::CPU.intel?
-      url "https://dl.dagger.io/dagger/releases/0.9.10/dagger_v0.9.10_linux_amd64.tar.gz"
-      sha256 "0e5abaef1057efd8507c9388322331f0224838c2f7d5b92a689fe0fe9fc36109"
+      url "https://dl.dagger.io/dagger/releases/0.9.11/dagger_v0.9.11_linux_amd64.tar.gz"
+      sha256 "f13f2bca8c831ad5bf3c8166e13f499aeb00fd72207b1796dc1c06998c7a13e7"
 
       def install
         bin.install "dagger"
