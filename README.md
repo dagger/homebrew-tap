@@ -14,10 +14,10 @@ If you would like to report an issue with this Homebrew tap, please use <https:/
 ## How to fix a broken tap? 🚰
 
 On February 20, 2025 we rewrote the git history since a pre-release snuck it by
-mistake, and we also fixed some artefact SHAs due to a separate problem - #7.
+mistake, and we also fixed some artefact SHAs due to a separate problem -
+[#7](https://github.com/dagger/homebrew-tap/pull/7).
 
-Unfortunately, this git rewrite broke the tap. To fix it, you can run the
-following:
+Unfortunately, this git rewrite broke the tap. To fix it, run the following:
 
 ```console
 brew untap dagger/tap
