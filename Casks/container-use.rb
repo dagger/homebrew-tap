@@ -2,37 +2,41 @@
 cask "container-use" do
   desc "Containerized environments for coding agents"
   homepage "https://github.com/dagger/container-use"
-  version "0.0.5"
+  version "0.1.0"
 
   livecheck do
     skip "Auto-generated on release."
   end
 
   binary "cu"
+  bash_completion "completions/cu.bash"
+  zsh_completion "completions/cu.zsh"
+  fish_completion "completions/cu.fish"
 
   on_macos do
     on_intel do
-      url "https://github.com/dagger/container-use/releases/download/v0.0.5/container-use_v0.0.5_darwin_amd64.tar.gz"
-      sha256 "899f8343fcabb35270cfe653a3dbdd0fe9d934bf2aaf627f2101305e96733163"
+      url "https://github.com/dagger/container-use/releases/download/v0.1.0/container-use_v0.1.0_darwin_amd64.tar.gz"
+      sha256 "d8d94c5d450c6dfad5e1569fe91e4d72906ec5d02bde5d15c6d2f3ac97a9983d"
     end
     on_arm do
-      url "https://github.com/dagger/container-use/releases/download/v0.0.5/container-use_v0.0.5_darwin_arm64.tar.gz"
-      sha256 "e9bcb4ac5acdc640a0c57b1b8fc6483e3eae824e224444c0c1739edf6ee12fe6"
+      url "https://github.com/dagger/container-use/releases/download/v0.1.0/container-use_v0.1.0_darwin_arm64.tar.gz"
+      sha256 "3e222b2aee17697c105c9e4aee960e24ca05dc43c866d0a6867969423b56f7d5"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/dagger/container-use/releases/download/v0.0.5/container-use_v0.0.5_linux_amd64.tar.gz"
-      sha256 "592de2fe50f8564c1e0ff25af93693e07666b10a90290bed2823204928f69e99"
+      url "https://github.com/dagger/container-use/releases/download/v0.1.0/container-use_v0.1.0_linux_amd64.tar.gz"
+      sha256 "063d1125e73f0a1bc7bc7a8c136ac0fb869e85c5d0107ec7c200e82cb7d99412"
     end
     on_arm do
-      url "https://github.com/dagger/container-use/releases/download/v0.0.5/container-use_v0.0.5_linux_arm64.tar.gz"
-      sha256 "3d1bba93985388874fa68f885d1dc7e296009ae34dd85860de0dd36ed0c3418e"
+      url "https://github.com/dagger/container-use/releases/download/v0.1.0/container-use_v0.1.0_linux_arm64.tar.gz"
+      sha256 "d59f45e3aafe28e008085bfeed4921e3b058d5bfbec147f34e7607e0f52a61d7"
     end
   end
 
   postflight do
+    # remove quarantine xattr (note we don't do anything with signatures yet)
     if system_command("/usr/bin/xattr", args: ["-h"]).exit_status == 0
       system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/cu"]
     end
