@@ -2,43 +2,66 @@
 cask "container-use" do
   desc "Containerized environments for coding agents"
   homepage "https://github.com/dagger/container-use"
-  version "0.1.1"
+  version "0.2.0"
 
   livecheck do
     skip "Auto-generated on release."
   end
 
-  binary "cu"
-  bash_completion "completions/cu.bash"
-  zsh_completion "completions/cu.zsh"
-  fish_completion "completions/cu.fish"
+  binary "container-use"
+  bash_completion "completions/container-use.bash"
+  zsh_completion "completions/container-use.zsh"
+  fish_completion "completions/container-use.fish"
 
   on_macos do
     on_intel do
-      url "https://github.com/dagger/container-use/releases/download/v0.1.1/container-use_v0.1.1_darwin_amd64.tar.gz"
-      sha256 "1088d8cff21de793c19c18a8e042f0304c9cf20bbfe615df031887ef6d20537d"
+      url "https://github.com/dagger/container-use/releases/download/v0.2.0/container-use_v0.2.0_darwin_amd64.tar.gz"
+      sha256 "8843c2e0bf7a56f2c1921a570e38071a8d162ecd1ba8bebb6dfeca7cb5b5be6b"
     end
     on_arm do
-      url "https://github.com/dagger/container-use/releases/download/v0.1.1/container-use_v0.1.1_darwin_arm64.tar.gz"
-      sha256 "5f9bd69d18193f9ee834d4ead20151a0e80373002eebd8e4054dbeabecbb7ea9"
+      url "https://github.com/dagger/container-use/releases/download/v0.2.0/container-use_v0.2.0_darwin_arm64.tar.gz"
+      sha256 "88f53a1fb1a2d5cb652b69887d4f31da5658c8d2175b05edfa3769349a77b5ac"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/dagger/container-use/releases/download/v0.1.1/container-use_v0.1.1_linux_amd64.tar.gz"
-      sha256 "10af7db2d81df84ba527cbf50b62ae1d2fb816f242b604e23eb91b600240471e"
+      url "https://github.com/dagger/container-use/releases/download/v0.2.0/container-use_v0.2.0_linux_amd64.tar.gz"
+      sha256 "c321ad647cf9ae6458cc332dcde3efc118e98766871d9d0623a58bd409d6f2bc"
     end
     on_arm do
-      url "https://github.com/dagger/container-use/releases/download/v0.1.1/container-use_v0.1.1_linux_arm64.tar.gz"
-      sha256 "6215cfef41dadda05c606beeb6f99357e8f4f790125183994b0b5f8c593da6a4"
+      url "https://github.com/dagger/container-use/releases/download/v0.2.0/container-use_v0.2.0_linux_arm64.tar.gz"
+      sha256 "49f4c514f4a8a0b9a27a89086beae7e8bf9257203c0e753e4cfe4fed815bb840"
     end
   end
 
   postflight do
     # remove quarantine xattr (note we don't do anything with signatures yet)
-    if system_command("/usr/bin/xattr", args: ["-h"]).exit_status == 0
-      system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/cu"]
+    if File.exist?("/usr/bin/xattr")
+      system "/usr/bin/xattr", "-dr", "com.apple.quarantine", "#{staged_path}/container-use"
+    end
+
+    # Create cu symlink for backward compatibility
+    FileUtils.ln_sf "#{HOMEBREW_PREFIX}/bin/container-use", "#{HOMEBREW_PREFIX}/bin/cu"
+
+    # Install cu completions for backward compatibility
+    bash_completion = "#{HOMEBREW_PREFIX}/etc/bash_completion.d"
+    zsh_completion = "#{HOMEBREW_PREFIX}/share/zsh/site-functions"
+    fish_completion = "#{HOMEBREW_PREFIX}/share/fish/vendor_completions.d"
+
+    if File.exist?("#{staged_path}/completions/cu.bash")
+      FileUtils.mkdir_p bash_completion
+      FileUtils.cp "#{staged_path}/completions/cu.bash", "#{bash_completion}/cu"
+    end
+
+    if File.exist?("#{staged_path}/completions/cu.zsh")
+      FileUtils.mkdir_p zsh_completion
+      FileUtils.cp "#{staged_path}/completions/cu.zsh", "#{zsh_completion}/_cu"
+    end
+
+    if File.exist?("#{staged_path}/completions/cu.fish")
+      FileUtils.mkdir_p fish_completion
+      FileUtils.cp "#{staged_path}/completions/cu.fish", "#{fish_completion}/cu.fish"
     end
   end
 
