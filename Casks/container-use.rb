@@ -2,36 +2,37 @@
 cask "container-use" do
   desc "Containerized environments for coding agents"
   homepage "https://github.com/dagger/container-use"
-  version "0.2.0"
+  version "0.3.0"
 
   livecheck do
     skip "Auto-generated on release."
   end
 
   binary "container-use"
+  manpage "man/container-use.1"
   bash_completion "completions/container-use.bash"
   zsh_completion "completions/container-use.zsh"
   fish_completion "completions/container-use.fish"
 
   on_macos do
     on_intel do
-      url "https://github.com/dagger/container-use/releases/download/v0.2.0/container-use_v0.2.0_darwin_amd64.tar.gz"
-      sha256 "8843c2e0bf7a56f2c1921a570e38071a8d162ecd1ba8bebb6dfeca7cb5b5be6b"
+      url "https://github.com/dagger/container-use/releases/download/v0.3.0/container-use_v0.3.0_darwin_amd64.tar.gz"
+      sha256 "5d67f1b564a85ae882bad65e52e3686af1810524b7930f41e4fc05b0f057ce00"
     end
     on_arm do
-      url "https://github.com/dagger/container-use/releases/download/v0.2.0/container-use_v0.2.0_darwin_arm64.tar.gz"
-      sha256 "88f53a1fb1a2d5cb652b69887d4f31da5658c8d2175b05edfa3769349a77b5ac"
+      url "https://github.com/dagger/container-use/releases/download/v0.3.0/container-use_v0.3.0_darwin_arm64.tar.gz"
+      sha256 "293a8d14458bb7a2b76f79b8e8f036d2e4a17a8d44c91d976d0dd8eb63db938e"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/dagger/container-use/releases/download/v0.2.0/container-use_v0.2.0_linux_amd64.tar.gz"
-      sha256 "c321ad647cf9ae6458cc332dcde3efc118e98766871d9d0623a58bd409d6f2bc"
+      url "https://github.com/dagger/container-use/releases/download/v0.3.0/container-use_v0.3.0_linux_amd64.tar.gz"
+      sha256 "9296214fc114a7ff958c74a09e95ceeeb7e7e17b20182d30efa07716024a9875"
     end
     on_arm do
-      url "https://github.com/dagger/container-use/releases/download/v0.2.0/container-use_v0.2.0_linux_arm64.tar.gz"
-      sha256 "49f4c514f4a8a0b9a27a89086beae7e8bf9257203c0e753e4cfe4fed815bb840"
+      url "https://github.com/dagger/container-use/releases/download/v0.3.0/container-use_v0.3.0_linux_arm64.tar.gz"
+      sha256 "7a0606426d134b257eb6e21ffac297abb35aaf0781e06fbc0803cb2383907ae3"
     end
   end
 
@@ -63,6 +64,16 @@ cask "container-use" do
       FileUtils.mkdir_p fish_completion
       FileUtils.cp "#{staged_path}/completions/cu.fish", "#{fish_completion}/cu.fish"
     end
+  end
+
+  uninstall_postflight do
+    # Remove cu symlink
+    FileUtils.rm_f "#{HOMEBREW_PREFIX}/bin/cu"
+
+    # Remove cu completions
+    FileUtils.rm_f "#{HOMEBREW_PREFIX}/etc/bash_completion.d/cu"
+    FileUtils.rm_f "#{HOMEBREW_PREFIX}/share/zsh/site-functions/_cu"
+    FileUtils.rm_f "#{HOMEBREW_PREFIX}/share/fish/vendor_completions.d/cu.fish"
   end
 
   # No zap stanza required
