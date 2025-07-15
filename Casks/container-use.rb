@@ -2,7 +2,7 @@
 cask "container-use" do
   desc "Containerized environments for coding agents"
   homepage "https://github.com/dagger/container-use"
-  version "0.3.0"
+  version "0.3.1"
 
   livecheck do
     skip "Auto-generated on release."
@@ -16,23 +16,23 @@ cask "container-use" do
 
   on_macos do
     on_intel do
-      url "https://github.com/dagger/container-use/releases/download/v0.3.0/container-use_v0.3.0_darwin_amd64.tar.gz"
-      sha256 "5d67f1b564a85ae882bad65e52e3686af1810524b7930f41e4fc05b0f057ce00"
+      url "https://github.com/dagger/container-use/releases/download/v0.3.1/container-use_v0.3.1_darwin_amd64.tar.gz"
+      sha256 "b651cae85b04b9fc4673f4d884d6397174b09a51880c41be83026b4fd10c3566"
     end
     on_arm do
-      url "https://github.com/dagger/container-use/releases/download/v0.3.0/container-use_v0.3.0_darwin_arm64.tar.gz"
-      sha256 "293a8d14458bb7a2b76f79b8e8f036d2e4a17a8d44c91d976d0dd8eb63db938e"
+      url "https://github.com/dagger/container-use/releases/download/v0.3.1/container-use_v0.3.1_darwin_arm64.tar.gz"
+      sha256 "922e3175f91b307a01e4953db9835bf9b76d02648f621f8f35d58e3c52dead73"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/dagger/container-use/releases/download/v0.3.0/container-use_v0.3.0_linux_amd64.tar.gz"
-      sha256 "9296214fc114a7ff958c74a09e95ceeeb7e7e17b20182d30efa07716024a9875"
+      url "https://github.com/dagger/container-use/releases/download/v0.3.1/container-use_v0.3.1_linux_amd64.tar.gz"
+      sha256 "e8ece56c3649dde3ccd7be2cb2c693dfb77c8e0fceab5a606933e13963e9c6d2"
     end
     on_arm do
-      url "https://github.com/dagger/container-use/releases/download/v0.3.0/container-use_v0.3.0_linux_arm64.tar.gz"
-      sha256 "7a0606426d134b257eb6e21ffac297abb35aaf0781e06fbc0803cb2383907ae3"
+      url "https://github.com/dagger/container-use/releases/download/v0.3.1/container-use_v0.3.1_linux_arm64.tar.gz"
+      sha256 "25ab19b54075b54bbf5ecb8b58e82373ac57181aa4ecf633ff1c7a8bb3ec425d"
     end
   end
 
