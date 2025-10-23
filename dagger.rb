@@ -5,20 +5,20 @@
 class Dagger < Formula
   desc "Dagger is an integrated platform to orchestrate the delivery of applications"
   homepage "https://dagger.io"
-  version "0.19.2"
+  version "0.19.3"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://dl.dagger.io/dagger/releases/0.19.2/dagger_v0.19.2_darwin_amd64.tar.gz"
-      sha256 "9099a9db53cfb8a2b790e36f8e09649f58a1764ef1ab7f712b6ec3ee0d462d20"
+      url "https://dl.dagger.io/dagger/releases/0.19.3/dagger_v0.19.3_darwin_amd64.tar.gz"
+      sha256 "5bd45fbd44de388190cd909c392d489e553379150798a288e916df22cbdaeac0"
 
       def install
         bin.install "./dagger"
       end
     end
     if Hardware::CPU.arm?
-      url "https://dl.dagger.io/dagger/releases/0.19.2/dagger_v0.19.2_darwin_arm64.tar.gz"
-      sha256 "1a5b09644bd9080e1ce54f60b699c01ffe96a9215c035119900efa17a5431fcc"
+      url "https://dl.dagger.io/dagger/releases/0.19.3/dagger_v0.19.3_darwin_arm64.tar.gz"
+      sha256 "8cbdb6d3aa76d3c1232b3e90c684842a759d2520ca1816112c23c9af4c378cfa"
 
       def install
         bin.install "./dagger"
@@ -28,15 +28,15 @@ class Dagger < Formula
 
   on_linux do
     if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
-      url "https://dl.dagger.io/dagger/releases/0.19.2/dagger_v0.19.2_linux_amd64.tar.gz"
-      sha256 "c5f9d94c1a2404d75a2b00dd43619ea2b29baf7922b9f93f491531b21e8c1b18"
+      url "https://dl.dagger.io/dagger/releases/0.19.3/dagger_v0.19.3_linux_amd64.tar.gz"
+      sha256 "1569925828113758f4566d5ca96b0fa1ce246215cdc99a6ce2d42e3ae81e61dd"
       def install
         bin.install "./dagger"
       end
     end
     if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
-      url "https://dl.dagger.io/dagger/releases/0.19.2/dagger_v0.19.2_linux_arm64.tar.gz"
-      sha256 "7aab36cdedba52a6f989f8f6f321258e96d4fa26f0c3e81f5287a900eef7cc53"
+      url "https://dl.dagger.io/dagger/releases/0.19.3/dagger_v0.19.3_linux_arm64.tar.gz"
+      sha256 "f0594bbfe4f1762c13102db93eb6e7f265f264a7460ca821dfb7b8b4aa1782f6"
       def install
         bin.install "./dagger"
       end
